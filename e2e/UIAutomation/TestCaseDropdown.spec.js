@@ -1,5 +1,4 @@
-import { test, expect } from "@playwright/test";
-import { waitForDebugger } from "inspector";
+const { test, expect } = require("@playwright/test");
 
 test("Dropdown test", async ({ page }) => {
   await page.goto("https://testautomationpractice.blogspot.com/");
@@ -10,16 +9,16 @@ test("Dropdown test", async ({ page }) => {
   await page.locator("#country").selectOption({ value: "India" });
   await page.locator("#country").selectOption({ index: 1 });
   //await page.waitForTimeout(10000); // Wait for 10 seconds
-  await page.selectOption("#country", "India");
-  await page.selectOption("#country", { label: "India" });
+  await page.selectOption("#country", "France");
+  await page.selectOption("#country", { label: "australia" });
 
   // To check number of options are visible in the dropdown -- Approach 1
-  const optionLength = await page.locator("#country option").count();
+  const optionLength = await page.locator("#country option");
   await expect(optionLength).toHaveCount(10);
 
   // To check number of options -- Approach 2
   const demoOption = await page.$$("#country option");
-  console.log("Number of options in the dropdown: " + demoOption.length);
+  console.log("Number of options in the dropdown: ", demoOption.length);
   expect(demoOption.length).toBe(10);
 
   // To validate specific option is present in the dropdown
