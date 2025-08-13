@@ -10,6 +10,8 @@ npm playwright -v -- return installed version of playwright.
 
 Install playwright extension in VS code -- Playwright Test for VSCode.
 
+To install MCP server on VS code -- npm i @playwright/mcp
+
 ## Playwright suggests run commands during installaion:
 
 npx playwright test
@@ -79,3 +81,40 @@ https://www.dummyticket.com/dummy-ticket-for-visa-application/
 Handle below 3 Dropdown -
 
 Purpose of dummy ticket (optional) Country State
+
+## POM
+
+Class File (Pages Files 15 pages)
+
+- page locators
+- page functions
+  tests
+- loginTest.spec.js
+- homepageTest.spec.js
+- aboutusTest.spec.js
+
+## LLM + MCP Playwright + Agent
+
+LLM - Large Language Model
+
+- ChatGPT
+- Gemini
+- Perplexity
+- AI Cloude
+- History
+
+LLM cannot do
+
+1. Opening a browser and entering username/password
+2. Connect to the database
+3. Call APIs and Show the response
+
+## Agents
+
+An agent is a system who is taking the instruction from an LLM and perform and convert into real time action using external tools
+
+User --> Prompt --> LLM --> Agent ---> MCP
+
+What is MCP - Model Context Protocol MCP is a kind of framwork, which is reponsible for connecting LLM to real world tools such as DB, Browsers, APIs
+
+MCP is acting a bridge --> Between LLM and Your application (AUT)

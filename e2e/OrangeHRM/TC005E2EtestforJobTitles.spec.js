@@ -1,7 +1,6 @@
-const { test, expect } = require("@playwright/test");
-const path = require("path");
+import { test, expect } from "@playwright/test";
 
-test("test Demo", async ({ page }) => {
+test("Test for Job Titles", async ({ page }) => {
   // Go to login page and login
   await page.goto(
     "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
@@ -23,18 +22,10 @@ test("test Demo", async ({ page }) => {
   await page.click('button:has-text("Add")');
 
   // Fill in Job Title and Description
-  //await page.fill('input[placeholder="Job Title"]', 'Test Job');
-  //await page.fill('textarea[placeholder="Type description here"]', 'This is a test description');
-
-  // Upload the file by targeting the hidden input[type="file"]
-  const filePath = path.resolve("e2e/uploadFiles/error-context.md"); // file path
-  await page.setInputFiles('input[type="file"]', filePath);
+  await page.getByRole("textbox").nth(1).fill("QA Lead");
 
   // Optional: Fill in Note
-  await page.fill(
-    'textarea[placeholder="Add note"]',
-    "Uploaded via Playwright"
-  );
+  await page.getByRole("textbox", { name: "Add note" }).fill("QA Notes");
 
   // Save the form
   await page.click('button:has-text("Save")');
