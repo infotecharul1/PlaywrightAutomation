@@ -1,11 +1,27 @@
 import { test, expect } from "@playwright/test";
+import * as allure from "allure-js-commons";
 
 let baseUrl = "https://testautomationpractice.blogspot.com/";
 
 test("Checkbox test", async ({ page }) => {
+  await allure.description(
+    "The test checks if an active user with a valid password can sign in to the app."
+  );
+  await allure.epic("Signing in");
+  await allure.feature("Sign in with a password");
+  await allure.story(
+    "As an active user, I want to successfully sign in using a valid password"
+  );
+  await allure.tags("signin", "ui", "positive");
+  await allure.issue(
+    "https://github.com/allure-framework/allure-js/issues/331",
+    "ISSUE-331"
+  );
+  await allure.owner("eroshenkoam");
+  await allure.parameter("browser", "chrome");
   await page.goto(baseUrl);
 
-  await page.locator('input[id="sunday"]').check();
+  const checkbox = page.locator('input[id="sunday"]');
   await checkbox.check();
   await expect(checkbox).toBeChecked();
 
@@ -50,5 +66,5 @@ test("Checkbox test", async ({ page }) => {
   // Uncheck
   await radioButtonMale.uncheck();
   await expect(radioButtonMale).not.toBeChecked();
-  await expect(radioButtonFemale).not.toBeChecked();
+  await expect(radioButtonFemale).toBeChecked();
 });

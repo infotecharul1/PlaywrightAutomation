@@ -88,7 +88,9 @@ Class File (Pages Files 15 pages)
 
 - page locators
 - page functions
-  tests
+
+tests
+
 - loginTest.spec.js
 - homepageTest.spec.js
 - aboutusTest.spec.js
@@ -118,3 +120,63 @@ User --> Prompt --> LLM --> Agent ---> MCP
 What is MCP - Model Context Protocol MCP is a kind of framwork, which is reponsible for connecting LLM to real world tools such as DB, Browsers, APIs
 
 MCP is acting a bridge --> Between LLM and Your application (AUT)
+
+## Test Data:
+
+- Excel --> JSON --> playwright will read the JSON data (npm install xlsx)
+- JSON
+- CSV
+- Text file
+
+## Reporting
+
+install allure then setup the reporter into plywright.config.js:
+
+- npm install -g allure
+
+- npm i allure-playwright
+  or
+- npm install -D allure-playwright
+
+Run cmd: npx playwright test <testcase suite.spec.js>
+
+- Generate Allure Report after the tests are executed:
+  allure generate ./allure-results -o ./allure-report
+  allure generate ./allure-results -o ./allure-report --clean
+
+- Open the generated report:
+  allure open ./allure-report
+
+## API Testing
+
+- FrontEnd/ BackEnd
+- Client ---API--- Server
+- Server ---API--- Client
+
+## API METHODS(CRUD)
+
+GET POST PUT PATCH DELETE
+
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods
+
+## API STATUS CODE
+
+1XX 2XX 3XX 4XX -- CLIENT SIDE ERROR 5XX -- SERVER SIDE ERROR
+
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status
+
+QUERY PARAM - ?DEMO=VALUE&DEV=123
+PATH PARAM - docs/Web/HTTP/Reference/Status -- ARE PATH PARAMETER
+
+END POINT -- https://www.airbnb.co.in/ --> PRODUCTION ENVIRONMENT
+
+END POINT -- stage.airbnb.co.in --> Stage ENVIRONMENT
+
+## TOOLS FOR API
+
+POSTMAN - OPEN SOURCE
+JMETER - OPEN SOURCE
+BRUNO - OPEN SOURCE
+
+READY API - https://www.soapui.org/tools/readyapi/
+SWAGGER - https://editor.swagger.io/
