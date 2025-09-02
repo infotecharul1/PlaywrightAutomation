@@ -19,6 +19,7 @@
   "dependencies": {
     "@playwright/mcp": "^0.0.33",
     "allure-playwright": "^3.3.3",
+    "dotenv": "^17.2.1",
     "xlsx": "^0.18.5"
   }
 }

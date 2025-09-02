@@ -180,3 +180,17 @@ BRUNO - OPEN SOURCE
 
 READY API - https://www.soapui.org/tools/readyapi/
 SWAGGER - https://editor.swagger.io/
+
+# API uses API keys
+
+Encode/Decpde using below OpenSource websites
+https://www.jwt.io/
+https://token.dev/ -- Bearer Token
+https://www.base64decode.org/ -- Basic
+
+# Payment gateway - VISA, Paypal, Klarna, Mastercard, applypay
+
+https://docs.stripe.com/api
+https://docs.spreedly.com/reference/api/v1/#gateways
+
+## CI/CD Process
